@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>DJango Authentication</title>
+        <link rel="stylesheet" href="{%static 'css/authstyles.css'%}">
+    </head>
+    <body>
+        <nav>
+            <div>
+                <div>
+                    <h1>
+                        <a href="/">MANU EXAMINATION-CENTER</a>
+                    </h1> <hr />
+                </div>
+                <ul>
+                    <li> <a href="/java/">Java Exams</a> |
+                     <a href="/python/">Python Exams</a>  |
+                     <a href="/aptitude/">Aptitude Exams</a> </li>
+                </ul>
+                <ul>
+                    <li> <a href="/signup/">Signup</a>  |
+                     <a href="/accounts/login/">Login</a> |
+                     <a href="/logout/">Logout</a> </li>
+                </ul>
+            </div>
+        </nav>
+        <br /><br /><br />
+        <hr />
+        <br />
+        {%block body_block%}
+        {%endblock%}
+    </body>
+</html>
+
