@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
+{%load static%}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Movies-List</title>
+        <link rel="stylesheet" href="{% static css/movie.css%}">
+    </head>
+    <body>
+        <h1>Movies-List Details..!!</h1>
+        <hr />
+        {%if movies_list%}
+            <table>
+                <thead>
+                    <th>Release-Date</th>
+                    <th>Movie-Name</th>
+                    <th>Actor</th>
+                    <th>Actress</th>
+                    <th>Rating</th>
+                </thead>
+                <tbody>
+                {%for movie in movies_list%}
+                    <tr>
+                        <td>{{movie.releasedate}}</td>
+                        <td>{{movie.moviename}}</td>
+                        <td>{{movie.actorname}}</td>
+                        <td>{{movie.actressname}}</td>
+                        <td>{{movie.movierating}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+			<a href="/">Home-Page</a>
+        {%else%}
+            <p>OOPs...No Movies Found!!</p>
+        {%endif%}
 </body>
 </html>
+

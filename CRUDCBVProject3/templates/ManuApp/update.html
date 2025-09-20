@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'ManuApp/base.html'%}
+{%block body_block%}
+    <h1>Student Update Form</h1>
+    <hr />
+    <form method="post">
+        {%csrf_token%}
+        Student-Number: <input type="text" name="sno" value="{{student.sno}}" disabled><p></p>
+        Student-Name: <input type="text" name="ename" value="{{student.sname}}"><p></p>
+        Student-Subject: <input type="text" name="esal" value="{{student.ssub}}"><p></p>
+        Student-College: <input type="text" name="eaddr" value="{{student.scollege}}"> <p></p>
+        <input type="submit" value="Update-Record">
+    </form>
+{%endblock%}
+

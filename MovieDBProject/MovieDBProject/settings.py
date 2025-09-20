@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ManuApp.apps.ManuappConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,8 @@ ROOT_URLCONF = 'MovieDBProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates']
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,9 +75,17 @@ WSGI_APPLICATION = 'MovieDBProject.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    #'default': {
+    #'ENGINE': 'django.db.backends.sqlite3',
+    #'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+    'default':{
+     'ENGINE':'django.db.backends.mysql',
+     'HOST': 'localhost',
+     'PORT':'3306',
+     'NAME':'moviedb',
+     'USER':'root',
+     'PASSWORD':'root',
     }
 }
 
@@ -115,6 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+import os;
+STATIC_DIR = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS =[
+    STATIC_DIR
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
